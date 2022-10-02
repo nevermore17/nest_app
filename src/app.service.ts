@@ -1,8 +1,9 @@
 import { Injectable } from '@nestjs/common';
+import {configService} from "./config/config.service";
 
 @Injectable()
 export class AppService {
   getHello(): string {
-    return 'Hello World!';
+    return JSON.stringify(configService.getTypeOrmConfig());
   }
 }
